@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:privateapp/Screen/SubWay/subway_main.dart';
 import 'package:privateapp/Screen/Chart/chart.dart';
 import 'package:privateapp/Screen/Default_layout/default_layout.dart';
 import 'package:privateapp/Screen/Chart/pie_chart_sample3.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
+class _HomeScreenState extends ConsumerState<HomeScreen>
     with SingleTickerProviderStateMixin {
   late TabController controller;
   int index = 0;
@@ -38,18 +39,15 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   Widget build(BuildContext context) {
     return DefaultLayout(
-      title: '지하철',
       child: TabBarView(
         controller: controller,
         children: [
+          SubwayMain(),
           Center(
             child: Container(
               child: Text('홈'),
             ),
           ),
-          SubwayMain(),
-          // Chart(),
-          // PieChartSample3(),
           Container(
             child: Text('프로필'),
           ),
