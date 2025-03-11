@@ -8,5 +8,5 @@ SUBWAY INFORMATION OPEN API GET PROJECT .
 RiverPod / Dio
 
 # API
-서울시 지하철 실시간 도착정보
+서울시 지하철 실시간 도착정보 / 
 서울교통공사_노선별 지하철역 정보
